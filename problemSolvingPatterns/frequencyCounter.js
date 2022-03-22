@@ -1,5 +1,7 @@
 /*
-Write a function that accepts two arrays and return TRUE if every value in the array has it's corresponding value squared in the second array. The frequency of the value must be thesame.
+Write a function that accepts two arrays and return TRUE,
+if every value in the array has it's corresponding value squared in the second array. 
+The frequency of the value must be thesame.
 */
 
 // Big O(n)
