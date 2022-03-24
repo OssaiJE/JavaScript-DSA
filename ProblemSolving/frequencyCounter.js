@@ -25,7 +25,7 @@ function same(arr1, arr2) {
 }
 
 // var time1 = performance.now();
-same([1, 2, 3, 2, 5], [9, 1, 4, 4, 25]);
+same([1, 2, 3, 2, 5], [9, 1, 4, 4, 25]); // Returns true
 // var time2 = performance.now();
 // console.log(`Time Elapsed: ${(time2 - time1) / 1000} seconds.`);
 
@@ -63,4 +63,4 @@ function validAnagram(first, second) {
   return true;
 }
 
-validAnagram("anagram", "nagaram");
+validAnagram("anagram", "nagaram"); // Returns true

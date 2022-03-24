@@ -26,7 +26,7 @@ function sumZero(arr) {
   }
 }
 
-sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 10]);
+sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 10]); // Returns [-3, 3]
 
 /*
 Implement a function which accepts a sorted array, and counts the unique values in the array.
@@ -50,4 +50,4 @@ function countUniqueValues(arr) {
   }
   return i + 1;
 }
-countUniqueValues([1, 2, 2, 5, 7, 7, 99]);
+countUniqueValues([1, 2, 2, 5, 7, 7, 99]); // Returns 5

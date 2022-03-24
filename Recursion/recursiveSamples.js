@@ -12,7 +12,7 @@ function countDown(num) {
   num--;
   countDown(num);
 }
-countDown(3);
+countDown(4); // Returns 4, 3, 2, 1
 
 // Iterative Version
 function countDown(num) {
@@ -21,6 +21,7 @@ function countDown(num) {
   }
   console.log("All done!");
 }
+countDown(4); // Returns 4, 3, 2, 1
 
 /**
  * Calculating SUM RANGES
@@ -31,7 +32,7 @@ function sumRange(num) {
   return num + sumRange(num - 1);
 }
 
-sumRange(4);
+sumRange(4); // Returns 10
 
 /**
  * Finding FACTORIALS
@@ -45,12 +46,14 @@ function factorial(num) {
   }
   return total;
 }
+factorial(4); // Returns 24
 
 // Recursive Version
 function factorial(num) {
   if (num === 1) return 1;
   return num * factorial(num - 1);
 }
+factorial(4); // Returns 24
 
 /**
  * Collect odd values
@@ -68,7 +71,7 @@ function collectOddValues(arr) {
     if (helperInput[0] % 2 !== 0) {
       result.push(helperInput[0]);
     }
-    // The SLICE METHOD removes the value at that position in the array
+    // The SLICE METHOD gives a new array from that position
     helper(helperInput.slice(1));
   }
 
@@ -77,7 +80,7 @@ function collectOddValues(arr) {
   return result;
 }
 
-collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]); // Returns [1, 3, 5, 7, 9]
 
 // Pure Recursive version
 function collectOddValues(arr) {
@@ -90,9 +93,9 @@ function collectOddValues(arr) {
   if (arr[0] % 2 !== 0) {
     newArr.push(arr[0]);
   }
-  // The SLICE METHOD removes the value at that position in the array
+  // The SLICE METHOD gives a new array from that position
   newArr = newArr.concat(collectOddValues(arr.slice(1)));
   return newArr;
 }
 
-collectOddValues([1, 2, 3, 4, 5]);
+collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]); // Returns [1, 3, 5, 7, 9]

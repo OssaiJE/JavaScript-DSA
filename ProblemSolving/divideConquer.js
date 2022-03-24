@@ -5,24 +5,24 @@ Given a sorted array of integers, write a function that accepts a value and retu
 // Big O(logN)
 
 function search(arr, val) {
-    if (arr.length === 0) return -1;
+  if (arr.length === 0) return -1;
 
-    let min = 0;
-    let max = arr.length - 1;
+  let min = 0;
+  let max = arr.length - 1;
 
-    while (min <= max) {
-        let middle = Math.floor((min + max) / 2);
-        // let currentElement = arr[middle];
-        // console.log(currentElement);
-        if (arr[middle] < val) {
-            min = middle + 1;
-        } else if (arr[middle] > val) {
-            max = middle - 1;
-        } else {
-            return middle;
-        }
+  while (min <= max) {
+    let middle = Math.floor((min + max) / 2);
+    // let currentElement = arr[middle];
+    // console.log(currentElement);
+    if (arr[middle] < val) {
+      min = middle + 1;
+    } else if (arr[middle] > val) {
+      max = middle - 1;
+    } else {
+      return middle;
     }
-    return -1
+  }
+  return -1;
 }
 
-search([1,2,3,4,5,6,7,8,9], 5)
+search([1, 2, 3, 4, 5, 6, 7, 8, 9], 5); // 4 (index of 5)
