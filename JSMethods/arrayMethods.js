@@ -42,8 +42,28 @@ function checkAdult(age) {
 }
 
 // find()	Returns the value of the first element in an array that pass a test
+const ages = [3, 10, 18, 20, 24];
+ages.find(checkAge); // 20
+function checkAge(age) {
+  return age > 18;
+}
+
 // findIndex()	Returns the index of the first element in an array that pass a test
+const ages = [3, 10, 18, 20, 24];
+ages.findIndex(checkAge); // 3
+function checkAge(age) {
+  return age > 18;
+}
+
 // forEach()	Calls a function for each array element
+let sum = 0;
+const numbers = [65, 44, 12, 4];
+numbers.forEach(myFunction);
+console.log(sum); // 125
+function myFunction(item) {
+  sum += item;
+}
+
 // from()	Creates an array from an object
 // includes()	Check if an array contains the specified element
 // indexOf()	Search the array for an element and returns its position
