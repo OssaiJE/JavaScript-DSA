@@ -64,13 +64,38 @@ function myFunction(item) {
   sum += item;
 }
 
-// from()	Creates an array from an object
+// from()	Creates an array from an object or string
+Array.from("ABCDEFG"); // ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
 // includes()	Check if an array contains the specified element
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.includes("Mango"); // true
+
 // indexOf()	Search the array for an element and returns its position
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.indexOf("Apple"); // 2
+
 // isArray()	Checks whether an object is an array
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+Array.isArray(fruits); // true
+
 // join()	Joins all elements of an array into a string
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.join(""); // 'BananaOrangeAppleMango'
+
 // keys()	Returns a Array Iteration Object, containing the keys of the original array
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+let text = "";
+for (let x of keys) {
+  text += x + ",";
+}
+console.log(text); // 0,1,2,3,
+
 // length	Sets or returns the number of elements in an array
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.length; // 4
+
 // lastIndexOf()	Search the array for an element, starting at the end, and returns its position
 // map()	Creates a new array with the result of calling a function for each array element
 // pop()	Removes the last element of an array, and returns that element
