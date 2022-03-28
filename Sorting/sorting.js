@@ -125,7 +125,7 @@ mergeSort([10, 24, 76, 73]); // [10, 24, 73, 76]
  * QUICK SORT ALGORITHM
  */
 
-// Big O(Logn)
+// Big O(n^2)
 
 function pivot(arr, start = 0, end = arr.length - 1) {
   const swap = (arr, idx1, idx2) => {
@@ -135,14 +135,12 @@ function pivot(arr, start = 0, end = arr.length - 1) {
   // We are assuming the pivot is always the first element
   let pivot = arr[start];
   let swapIdx = start;
-
   for (let i = start + 1; i <= end; i++) {
     if (pivot > arr[i]) {
       swapIdx++;
       swap(arr, swapIdx, i);
     }
   }
-
   // Swap the pivot from the start the swapPoint
   swap(arr, start, swapIdx);
   return swapIdx;
@@ -160,3 +158,10 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 }
 
 quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]); // [-3, 1, 2, 2, 3, 4, 5, 6, 9, 23, 100]
+
+/**
+ * RADIX SORT ALGORITHM
+ */
+
+// Big O(n)
+
