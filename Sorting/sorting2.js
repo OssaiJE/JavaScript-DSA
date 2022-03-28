@@ -1,82 +1,4 @@
 /**
- * BUILT IN SORTING
- */
-var arr1 = [1, 2, 10, 3, 25, 2, 5];
-arr1.sort((a, b) => {
-  return a - b; // [1, 2, 2, 3, , 5, 10, 25]
-});
-
-/**
- * BUBBLE SORT ALGORITHMS
- */
-
-// Big O(n^2)
-
-function bubbleSort(arr) {
-  var noSwaps;
-  for (var i = arr.length; i > 0; i--) {
-    noSwaps = true;
-    for (var j = 0; j < i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        var temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-        noSwaps = false;
-      }
-    }
-    if (noSwaps) break;
-  }
-  return arr;
-}
-
-bubbleSort([8, 1, 2, 22, 3, 10, 4, 5, 6]); // [1, 2, 3, 4, 5, 6, 8, 10, 22]
-
-/**
- * SELECTION SORT ALGORITHM
- */
-
-// Big O(n^2)
-
-function selectionSort(arr) {
-  const swap = (arr, idx1, idx2) =>
-    ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
-
-  for (let i = 0; i < arr.length; i++) {
-    let lowest = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[lowest] > arr[j]) {
-        lowest = j;
-      }
-    }
-    if (i !== lowest) swap(arr, i, lowest);
-  }
-
-  return arr;
-}
-
-selectionSort([0, 2, 34, 22, 10, 19, 17]); // [0, 2, 10, 17, 19, 22, 34]
-
-/**
- * INSERTION SORT ALGORITHM
- */
-
-// Big O(n^2)
-
-function insertionSort(arr) {
-  var currentVal;
-  for (var i = 1; i < arr.length; i++) {
-    currentVal = arr[i];
-    for (var j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
-      arr[j + 1] = arr[j];
-    }
-    arr[j + 1] = currentVal;
-  }
-  return arr;
-}
-
-insertionSort([2, 1, 9, 76, 4]); // [1, 2, 4, 9, 76]
-
-/**
  * FASTER SORTING ALGORITHMS
  */
 
@@ -125,7 +47,7 @@ mergeSort([10, 24, 76, 73]); // [10, 24, 73, 76]
  * QUICK SORT ALGORITHM
  */
 
-// Big O(n^2)
+// Big O(nLogn)
 
 function pivot(arr, start = 0, end = arr.length - 1) {
   const swap = (arr, idx1, idx2) => {
@@ -163,5 +85,36 @@ quickSort([100, -3, 2, 4, 6, 9, 1, 2, 5, 3, 23]); // [-3, 1, 2, 2, 3, 4, 5, 6, 9
  * RADIX SORT ALGORITHM
  */
 
-// Big O(n)
+// Big O(nk)
 
+function getDigit(num, i) {
+  return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+}
+
+function digitCount(num) {
+  if (num === 0) return 1;
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+}
+
+function mostDigits(nums) {
+  let maxDigits = 0;
+  for (let i = 0; i < nums.length; i++) {
+    maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+  }
+  return maxDigits;
+}
+
+function radixSort(nums) {
+  let maxDigitCount = mostDigits(nums);
+  for (let k = 0; k < maxDigitCount; k++) {
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+    for (let i = 0; i < nums.length; i++) {
+      let digit = getDigit(nums[i], k);
+      digitBuckets[digit].push(nums[i]);
+    }
+    nums = [].concat(...digitBuckets);
+  }
+  return nums;
+}
+
+radixSort([23, 345, 5467, 12, 2345, 9852]); // [12, 23, 345, 2345, 5467, 9852]
