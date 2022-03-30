@@ -118,6 +118,7 @@ class SinglyLinkedList {
     this.length--;
     return removed;
   }
+  //   Reverse list from pointing forward to backwards; head becomes tail and tail becomes head
   reverse() {
     var node = this.head;
     this.head = this.tail;
@@ -132,6 +133,7 @@ class SinglyLinkedList {
     }
     return this;
   }
+  //   Convert the list to array and log to console
   print() {
     var arr = [];
     var current = this.head;
@@ -150,3 +152,11 @@ list.push(201);
 list.push(250);
 list.push(350);
 list.push(999);
+
+// COMMANDS                               OUTPUT
+/**
+ * * $> list.methodName
+ * $> list                      SinglyLinkedList {head: Node, tail: Node, length: 5}
+ * $> list.print()                   [100, 201, 250, 350, 999]
+ * $> list.reverse() && list.print()      [999, 350, 250, 201, 100]
+ */
