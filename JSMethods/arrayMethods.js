@@ -97,7 +97,11 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.length; // 4
 
 // lastIndexOf()	Search the array for an element, starting at the end, and returns its position
+const fruits = ["Orange", "Apple", "Mango", "Apple", "Banana", "Apple"];
+fruits.lastIndexOf("Apple"); // 5
+
 // map()	Creates a new array with the result of calling a function for each array element
+
 // pop()	Removes the last element of an array, and returns that element
 // prototype	Allows you to add properties and methods to an Array object
 // push()	Adds new elements to the end of an array, and returns the new length
