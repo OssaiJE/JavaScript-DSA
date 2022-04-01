@@ -47,6 +47,7 @@ class DoublyLinkedList {
     this.length--;
     return poppedNode;
   }
+  //   Removing the head or from the begining
   shift() {
     if (this.length === 0) return undefined;
     var oldHead = this.head;
@@ -61,6 +62,7 @@ class DoublyLinkedList {
     this.length--;
     return oldHead;
   }
+  //   Adding to the begining
   unshift(val) {
     var newNode = new Node(val);
     if (this.length === 0) {
@@ -74,6 +76,7 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+  //   Get a list item at an index
   get(index) {
     if (index < 0 || index >= this.length) return null;
     var count, current;
@@ -94,6 +97,7 @@ class DoublyLinkedList {
     }
     return current;
   }
+  //   Updating the value of a node/list item in a given index
   set(index, val) {
     var foundNode = this.get(index);
     if (foundNode != null) {
@@ -102,8 +106,10 @@ class DoublyLinkedList {
     }
     return false;
   }
+  // Insert a new list item/node in a given index
   insert(index, val) {
     if (index < 0 || index > this.length) return false;
+    // The double "!!" below converts return value to boolean
     if (index === 0) return !!this.unshift(val);
     if (index === this.length) return !!this.push(val);
 
