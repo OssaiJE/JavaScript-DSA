@@ -122,7 +122,7 @@ class DoublyLinkedList {
     this.length++;
     return true;
   }
-   //   Remove node or list item from a specific index
+  //   Remove node or list item from a specific index
   remove(index) {
     if (index < 0 || index >= this.length) return undefined;
     if (index === 0) return this.shift();
@@ -137,9 +137,31 @@ class DoublyLinkedList {
     this.length--;
     return removedNode;
   }
+  //   Convert the list to array and log to console
+  print() {
+    var arr = [];
+    var current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 var list = new DoublyLinkedList();
 list.push("Harry");
 list.push("Ron");
 list.push("Hermione");
+list.push(100);
+list.push(201);
+list.push(250);
+list.push(350);
+list.push(999);
+
+// COMMANDS                               OUTPUT
+/**
+ * * $> list.methodName
+ * $> list                      DoublyLinkedList {head: Node, tail: Node, length: 8}
+ * $> list.print()                   ['Harry', 'Ron', 'Hermione', 100, 201, 250, 350, 999]
+ */
