@@ -103,11 +103,17 @@ fruits.lastIndexOf("Apple"); // 5
 // map()	Creates a new array with the result of calling a function for each array element
 
 // pop()	Removes the last element of an array, and returns that element
+
 // prototype	Allows you to add properties and methods to an Array object
+
 // push()	Adds new elements to the end of an array, and returns the new length
+
 // reduce()	Reduce the values of an array to a single value (going left-to-right)
+
 // reduceRight()	Reduce the values of an array to a single value (going right-to-left)
+
 // reverse()	Reverses the order of the elements in an array
+
 // shift()	Removes the first element of an array, and returns that element
 // slice()	Selects a part of an array, and returns the new array
 // some()	Checks if any of the elements in an array pass a test
