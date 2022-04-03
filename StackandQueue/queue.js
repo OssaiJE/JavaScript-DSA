@@ -1,5 +1,5 @@
 /**
- * STACK DATA STRUCTURE
+ * QUEUE DATA STRUCTURE
  */
 
 // Big O(1)
@@ -11,28 +11,28 @@ class Node {
   }
 }
 
-class Stack {
+class Queue {
   constructor() {
     this.first = null;
     this.last = null;
     this.size = 0;
   }
-  //   Add to the top of the stack
-  push(val) {
+  //   Add value to the queue
+  enqueue(val) {
     var newNode = new Node(val);
     if (!this.first) {
       this.first = newNode;
       this.last = newNode;
     } else {
-      var temp = this.first;
-      this.first = newNode;
-      this.first.next = temp;
+      this.last.next = newNode;
+      this.last = newNode;
     }
     return ++this.size;
   }
-  //   Remove from the top of the stack
-  pop() {
+  // Remove value from the queue
+  dequeue() {
     if (!this.first) return null;
+
     var temp = this.first;
     if (this.first === this.last) {
       this.last = null;
@@ -53,17 +53,17 @@ class Stack {
   }
 }
 
-var stack = new Stack();
+var queue = new Queue();
 
-stack.push(100);
-stack.push(201);
-stack.push(250);
-stack.push(350);
-stack.push(999);
+queue.enqueue(100);
+queue.enqueue(201);
+queue.enqueue(250);
+queue.enqueue(350);
+queue.enqueue(999);
 
 // COMMANDS                               OUTPUT
 /**
- * * $> stack.methodName
- * $> stack                      Stack {first: Node, last: Node, size: 5}
- * $> stack.print()                   [999, 350, 250, 201, 100]
+ * * $> queue.methodName
+ * $> queue                      Queue {first: Node, last: Node, size: 5}
+ * $> queue.print()                   [100, 201, 250, 350, 999]
  */
