@@ -42,7 +42,7 @@ class BinarySearchTree {
       }
     }
   }
-  //   Search a value in binary search tree
+  //   Search a value in binary search tree || returns the value
   find(value) {
     if (this.root === null) return false;
     var current = this.root,
@@ -59,6 +59,7 @@ class BinarySearchTree {
     if (!found) return undefined;
     return current;
   }
+  //   Search a value in binary search tree || returns the boolean
   contains(value) {
     if (this.root === null) return false;
     var current = this.root,
@@ -88,3 +89,10 @@ tree.insert(11);
 tree.insert(2);
 tree.insert(16);
 tree.insert(7);
+
+// COMMANDS                               OUTPUT
+/**
+ * * $> tree.methodName
+ * $> tree                      BinarySearchTree {root: Node}
+ * $> tree.find(5)                   Node {value: 5, left: Node, right: Node}
+ */
