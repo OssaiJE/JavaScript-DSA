@@ -59,7 +59,7 @@ class BinarySearchTree {
     if (!found) return undefined;
     return current;
   }
-  //   Search a value in binary search tree || returns the boolean
+  //   Search a value in binary search tree || returns a boolean
   contains(value) {
     if (this.root === null) return false;
     var current = this.root,
