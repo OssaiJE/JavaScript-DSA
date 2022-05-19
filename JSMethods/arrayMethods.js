@@ -109,8 +109,19 @@ function myFunction(num) {
 }
 
 // pop()	Removes the last element of an array, and returns that element
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop(); // 'Mango'
 
 // prototype	Allows you to add properties and methods to an Array object
+// Add a new method
+Array.prototype.myUcase = function() {
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i].toUpperCase();
+  }
+};
+// Use the method on any array
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.myUcase(); // ['BANANA', 'ORANGE', 'APPLE', 'MANGO']
 
 // push()	Adds new elements to the end of an array, and returns the new length
 
