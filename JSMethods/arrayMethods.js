@@ -124,6 +124,8 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.myUcase(); // ['BANANA', 'ORANGE', 'APPLE', 'MANGO']
 
 // push()	Adds new elements to the end of an array, and returns the new length
+const fruits = ["Banana", "Mango"];
+fruits.push("Kiwi", "Lemon"); // ['Banana', 'Mango', 'Kiwi', 'Lemon']
 
 // reduce()	Reduce the values of an array to a single value (going left-to-right)
 
@@ -132,10 +134,17 @@ fruits.myUcase(); // ['BANANA', 'ORANGE', 'APPLE', 'MANGO']
 // reverse()	Reverses the order of the elements in an array
 
 // shift()	Removes the first element of an array, and returns that element
+
 // slice()	Selects a part of an array, and returns the new array
+
 // some()	Checks if any of the elements in an array pass a test
+
 // sort()	Sorts the elements of an array
+
 // splice()	Adds/Removes elements from an array
+
 // toString()	Converts an array to a string, and returns the result
+
 // unshift()	Adds new elements to the beginning of an array, and returns the new length
+
 // valueOf()	Returns the primitive value of an array
