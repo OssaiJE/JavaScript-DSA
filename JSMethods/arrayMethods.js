@@ -101,6 +101,12 @@ const fruits = ["Orange", "Apple", "Mango", "Apple", "Banana", "Apple"];
 fruits.lastIndexOf("Apple"); // 5
 
 // map()	Creates a new array with the result of calling a function for each array element
+const numbers = [65, 44, 12, 4];
+const newArr = numbers.map(myFunction); // [650, 440, 120, 40]
+
+function myFunction(num) {
+  return num * 10;
+}
 
 // pop()	Removes the last element of an array, and returns that element
 
