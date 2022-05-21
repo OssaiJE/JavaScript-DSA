@@ -119,6 +119,7 @@ Array.prototype.myUcase = function() {
     this[i] = this[i].toUpperCase();
   }
 };
+
 // Use the method on any array
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.myUcase(); // ['BANANA', 'ORANGE', 'APPLE', 'MANGO']
